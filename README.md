@@ -5,6 +5,14 @@
     - docker-compose build
     - docker-compose up
 
-### The project wil be available on port 8088
+## The project wil be available on port 8088
 
-For better process use [Swagger](http://localhost:8088/swagger-ui/index.html#/)
+### For better process use [Swagger](http://localhost:8088/swagger-ui/index.html#/)
+
+### In this project were used:
+* Liquibase
+* Mapstruct
+* Docker test containers
+* JUnit
+* Mockito
+* PostgreSQL
