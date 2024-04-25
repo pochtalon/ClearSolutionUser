@@ -1,5 +1,6 @@
 package com.example.clearSoul.dto;
 
+import java.time.LocalDate;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -7,7 +8,10 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class UserDto {
     private Long id;
-    private String fullName;
     private String email;
-    private String phone;
+    private String firstName;
+    private String lastName;
+    private LocalDate birthDate;
+    private String address;
+    private String phoneNumber;
 }
