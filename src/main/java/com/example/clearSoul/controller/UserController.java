@@ -7,8 +7,10 @@ import com.example.clearSoul.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "User management", description = "Endpoints for managing users")
@@ -49,6 +52,14 @@ public class UserController {
     public UserDto updateUser(@PathVariable Long id,
                                   @Valid @RequestBody UserUpdateDto updateDto) {
         return userService.updateUser(id, updateDto);
+    }
+
+    @GetMapping("/search")
+    @Operation(summary = "Search user by birth date range",
+            description = "Search user by birth date range")
+    public List<UserDto> searchByDateRange(@RequestParam LocalDate fromDate,
+                                  @RequestParam LocalDate toDate) {
+        return userService.searchUsersByDateRange(fromDate, toDate);
     }
 
     @DeleteMapping("/{id}")

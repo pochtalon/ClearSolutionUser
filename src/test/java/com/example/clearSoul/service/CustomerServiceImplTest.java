@@ -27,7 +27,7 @@ class CustomerServiceImplTest {
     @Mock
     private UserMapper customerMapper;
     @InjectMocks
-    private CustomerServiceImpl customerService;
+    private UserServiceImpl customerService;
     private static final Long ID = 1994L;
     private static final String EMAIL = "eric.draven@mail.com";
     private static final String FULL_NAME = "Eric Draven";
