@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create-customers-table
+      id: create-users-table
       author: pochtalon
       changes:
         - createTable:
-            tableName: customers
+            tableName: users
             columns:
               - column:
                   name: id
@@ -14,32 +14,34 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: created
-                  type: TIMESTAMP
-                  constraints:
-                    nullable: false
-              - column:
-                  name: updated
-                  type: TIMESTAMP
-                  constraints:
-                    nullable: false
-              - column:
-                  name: full_name
-                  type: varchar(50)
-                  constraints:
-                    nullable: false
-                    unique: true
-              - column:
                   name: email
                   type: varchar(100)
                   constraints:
                     nullable: false
                     unique: true
               - column:
-                  name: phone
+                  name: first_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birth_date
+                  type: DATE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
                   type: varchar(14)
               - column:
-                  name: is_active
+                  name: phone_number
+                  type: varchar(14)
+              - column:
+                  name: is_delete
                   type: boolean
                   defaultValueBoolean: false
                   constraints:
