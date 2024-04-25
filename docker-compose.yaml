@@ -1,8 +1,8 @@
 version: "3.8"
 
-name: raven-container
+name: clear-soul
 services:
-  ravendb:
+  clear-soul-db:
     image: postgres
     restart: unless-stopped
     env_file:
@@ -20,9 +20,9 @@ services:
       retries: 3
   app:
     depends_on:
-      - ravendb
+      -   clear-soul-db
     restart: on-failure
-    image: raven-app
+    image: cl-soul-app:1.0
     build: .
     env_file:
       - ./.env
@@ -31,7 +31,7 @@ services:
       - $DEBUG_PORT:$DEBUG_PORT
     environment:
       SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url" : "jdbc:postgresql://ravendb:$POSTGRES_DOCKER_PORT/$POSTGRES_DATABASE",
+        "spring.datasource.url" : "jdbc:postgresql://clear-soul-db:$POSTGRES_DOCKER_PORT/$POSTGRES_DATABASE",
         "spring.datasource.username" : "$POSTGRES_USER",
         "spring.datasource.password" : "$POSTGRES_PASSWORD",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.PostgreSQLDialect"
