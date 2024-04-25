@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>raven_user</artifactId>
+    <artifactId>ClearSolutionUser</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>raven_user</name>
-    <description>raven_user</description>
+    <name>ClearSolutionUser</name>
+    <description>ClearSolutionUser</description>
     <properties>
         <lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
         <maven.checkstyle.plugin.configLocation>checkstyle.xml</maven.checkstyle.plugin.configLocation>
