@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create-users-table
+      id: create-user-table
       author: pochtalon
       changes:
         - createTable:
